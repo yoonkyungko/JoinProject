@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yoon.joinproject.mapper.UserMapper">
+    <insert id="saveUser" parameterType="com.yoon.joinproject.vo.UserVo">
+        INSERT INTO JOINUSER
+        (USERID, USERPWD, USERNAME, USERPHONE, EMAIL)
+        VALUES(#{userId}, #{userPwd}, #{userName}, #{userPhone}, #{email});
+    </insert>
+
+    <select id="searchUser" parameterType="com.yoon.joinproject.vo.UserVo" resultType="String">
+        SELECT
+               USERID
+        FROM JOINUSER
+        WHERE USERID = #{userId};
+    </select>
+
+    <select id="loginCheck" parameterType="com.yoon.joinproject.vo.UserVo" resultType="hashMap">
+        SELECT
+             USERID
+            ,USERNAME
+            ,USERPHONE
+            ,EMAIL
+        FROM JOINUSER
+        WHERE USERID = #{userId}
+    </select>
+
+    <select id="pwdCheck" parameterType="com.yoon.joinproject.vo.UserVo" resultType="hashMap">
+        SELECT
+              USERID
+             ,USERNAME
+             ,USERPHONE
+             ,EMAIL
+             ,USERPWD
+        FROM JOINUSER
+        WHERE USERID = #{userId}
+    </select>
+
+    <update id="updPwd" parameterType="com.yoon.joinproject.vo.UserVo" >
+        UPDATE JOINUSER
+        SET USERPWD = #{userPwd}
+        WHERE USERID = #{userId}
+    </update>
+
+</mapper>

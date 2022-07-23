@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인페이지</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Login.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#chgForm').hide();
+            $('#chgPwdForm').hide();
+        });
+    </script>
+</head>
+<body>
+<form id="useInputInfo">
+    <h2>로그인</h2>
+    <div>
+        <label>아이디</label>
+        <input type="text" id="userId" name="userId">
+    </div>
+    <div>
+        <label>비밀번호(8자리 이하로 작성하세요)</label>
+        <input type="password" id="userPwd" name="userPwd" maxlength="8">
+    </div>
+    <button type="button" id="loginComplete" name="loginComplete">로그인완료</button>
+    <button type="button" id="pwdChange" name="pwdChange">비밀번호 재설정</button>
+</form>
+
+<form id="chgForm">
+    <input type="hidden" id="authYn">
+    <input type="button" id="authStart" name="authStart" value="다시 인증하기">
+    <input type="text" id="authText" name="authText">
+    <input type="button" id="authCheck" name="authCheck" value="인증완료">
+    <span id="tempNum" name="tempNum"></span>
+</form>
+<form id="chgPwdForm">
+    <input type="hidden" id="chgUserId" name="chgUserId">
+    <div>
+        <br>* 비밀번호는 8자리 이하로 작성하세요 <br>
+        <label>기존 비밀번호</label>
+        <input type="password" id="oriPwd" name="oriPwd">
+        <label>변경할 비밀번호</label>
+        <input type="password" id="chgPwd" name="chgPwd">
+        <label>변경할 비밀번호 확인</label>
+        <input type="password" id="chgPwd2" name="chgPwd2">
+        <input type="button" id="chgStart" name="chgStart" value="변경">
+    </div>
+</form>
+</body>
+</html>

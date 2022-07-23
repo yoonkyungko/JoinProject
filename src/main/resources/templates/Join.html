@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입페이지</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Join.js"></script>
+</head>
+<body>
+<form id="joinForm">
+    <input type="hidden" id="authYn">
+    <div>
+        <h2>회원가입</h2>
+        <div>
+            <label>닉네임/아이디</label>
+            <input type="text" id="userId" name="userId">
+        </div>
+        <div>
+            <label>비밀번호(8자리 이하로 작성하세요)</label>
+            <input type="password" id="userPwd" name="userPwd" maxlength="8">
+        </div>
+        <div>
+            <label>이름/사용자명</label>
+            <input type="text" id="userName" name="userName">
+        </div>
+        <div>
+            <label>전화번호</label>
+            <input type="text" id="userPhone" name="userPhone">
+            <input type="button" id="authStart" name="authStart" value="인증하기">
+            <input type="text" id="authText" name="authText">
+            <input type="button" id="authCheck" name="authCheck" value="인증완료">
+            <span id="tempNum" name="tempNum"></span>
+        </div>
+        <div>
+            <label>이메일</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <button type="button" id="joinComplete" name="joinComplete">가입완료</button>
+    </div>
+</form>
+</body>
+</html>

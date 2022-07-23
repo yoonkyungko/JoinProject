@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 완료페이지(내 정보)</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Login.js"></script>
+</head>
+<body>
+<form id="useInputInfo">
+    <h2>내 정보 보기</h2>
+    <div>
+        <label>아이디</label>
+        <input type="text" th:value="${userInfo['USERID']}">
+    </div>
+    <div>
+        <label>이름</label>
+        <input type="text" th:value="${userInfo['USERNAME']}">
+    </div>
+    <div>
+        <label>전화번호</label>
+        <input type="text" th:value="${userInfo['USERPHONE']}">
+    </div>
+    <div>
+        <label>이메일</label>
+        <input type="text" th:value="${userInfo['EMAIL']}">
+    </div>
+</form>
+
+</body>
+</html>
